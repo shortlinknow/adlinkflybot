@@ -25,8 +25,8 @@ bot.onText(/\/start/, (msg) => {
   const chatId = msg.chat.id;
   const username = msg.from.username;
   const welcomeMessage = `Hello, ${username}!\n\n`
-    + 'Welcome to the @TeraLinkUrlBot-Your Personal URL Shortener Bot🌐!\n'
-    + 'Just send me a link, and I'll work my magic to shorten it for you. Plus, I'll keep track of your earnings💰💼.\n\n'
+    + 'Welcome to the @TeraLinkUrlBot-Your Personal URL Shortener Bot!\n'
+    + 'Just send me a link, and I'll work my magic to shorten it for you. Plus, I'll keep track of your earnings.\n\n'
     + 'To shorten a URL, just type or paste the URL directly in the chat, and I will provide you with the shortened URL.\n\n'
     + 'Get started now and experience the power of @TeraLinkUrlBot.\n\n'
     + 'If you haven\'t set your TERALINK API token yet, use the command:\n/api YOUR_TERALINK_API_TOKEN\n\n'
