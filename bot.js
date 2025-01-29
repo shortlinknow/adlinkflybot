@@ -26,9 +26,9 @@ bot.onText(/\/start/, (msg) => {
   const username = msg.from.username;
   const welcomeMessage = `Hello, ${username}!\n\n`
     + 'Welcome to the URL Shortener Bot!\n'
-    + 'You can use this bot to shorten URLs using the mybios.eu.org service.\n\n'
+    + 'You can use this bot to shorten URLs using the teralink.in\n\n'
     + 'To shorten a URL, just type or paste the URL directly in the chat, and the bot will provide you with the shortened URL.\n\n'
-    + 'If you haven\'t set your MyBios API token yet, use the command:\n/api YOUR_MYBIOS_API_TOKEN\n\n'
+    + 'If you haven\'t set your TERALINK API token yet, use the command:\n/api YOUR_TERALINK_API_TOKEN\n\n'
     + 'Now, go ahead and try it out!';
 
   bot.sendMessage(chatId, welcomeMessage);
@@ -43,7 +43,7 @@ bot.onText(/\/api (.+)/, (msg, match) => {
   // Save the user's MyBios API token to the database
   saveUserToken(chatId, userToken);
 
-  const response = `MyBios API token set successfully. Your token: ${userToken}`;
+  const response = `TERALINK API token set successfully. Your token: ${userToken}`;
   bot.sendMessage(chatId, response);
 });
 
@@ -60,16 +60,16 @@ bot.on('message', (msg) => {
 
 // Function to shorten the URL and send the result
 async function shortenUrlAndSend(chatId, Url) {
-  // Retrieve the user's MyBios API token from the database
+  // Retrieve the user's TERALINK API token from the database
   const arklinksToken = getUserToken(chatId);
 
   if (!arklinksToken) {
-    bot.sendMessage(chatId, 'Please provide your MyBios API token first. Use the command: /api YOUR_MYBIOS_API_TOKEN');
+    bot.sendMessage(chatId, 'Please provide your TERALINK API token first. Use the command: /api YOUR_TERALINK_API_TOKEN');
     return;
   }
 
   try {
-    const apiUrl = `https://mybios.eu.org/api?api=${arklinksToken}&url=${Url}`;
+    const apiUrl = `https://teralink.in/api?api=${arklinksToken}&url=${Url}`;
 
     // Make a request to the MyBios API to shorten the URL
     const response = await axios.get(apiUrl);
