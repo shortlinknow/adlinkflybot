@@ -26,9 +26,9 @@ bot.onText(/\/start/, (msg) => {
   const username = msg.from.username;
   const welcomeMessage = `Hello, ${username}!\n\n`
     + 'Welcome to the URL Shortener Bot!\n'
-    + 'You can use this bot to shorten URLs using the mybios.eu.org service.\n\n'
+    + 'You can use this bot to shorten URLs.\n\n'
     + 'To shorten a URL, just type or paste the URL directly in the chat, and the bot will provide you with the shortened URL.\n\n'
-    + 'If you haven\'t set your MyBios API token yet, use the command:\n/api YOUR_MYBIOS_API_TOKEN\n\n'
+    + 'If you haven\'t set your TERALINK API token yet, use the command:\n/api YOUR_TERALINK_API_TOKEN\n\n'
     + 'Now, go ahead and try it out!';
 
   bot.sendMessage(chatId, welcomeMessage);
